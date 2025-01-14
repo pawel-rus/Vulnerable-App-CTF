@@ -15,6 +15,10 @@ def rp(command):
 def index():
     return render_template('base.html')
 
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
 @app.route('/ping', methods=['POST', 'GET'])
 def ping():
     address = None
@@ -42,7 +46,7 @@ def hello():
     </head>
     <body>
         <nav class="navbar">
-        <a href="{{ url_for('index') }}">
+        <a href="{{ url_for('home') }}">
             <button class="button">Home</button>
         </a>
         <a href="{{ url_for('ping') }}">

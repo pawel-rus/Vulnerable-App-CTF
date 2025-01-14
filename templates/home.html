@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the Home Page</h1>
+    <h2>Can you find the hidden flag?</h2>
+    <img src="{{ url_for('static', filename='img.png') }}" alt="Image with hidden flag">
+{% endblock %}
