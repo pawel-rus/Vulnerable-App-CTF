@@ -1,4 +1,38 @@
-# Uruchomienie projektu z wykorzystaniem WSL (Windows Subsystem for Linux)
+# Vulnerable Flask Application CTF
+
+Aplikacja jest podatna na kilka różnych rodzajów ataków. Twoim zadaniem jest zidentyfikowanie tych podatności i odesłanie znalezionych flag wraz z informacją, jakiej podatności użyłeś.
+
+## Podatności w aplikacji
+
+Poniżej znajduje się lista podatności, które są zaimplementowane w tej aplikacji:
+
+1.  **OS Command Injection**
+    *   Pozwala na wykonanie poleceń systemu operacyjnego na serwerze.
+
+2.  **Server Side Template Injection (SSTI)**
+    *   Pozwala na wstrzyknięcie i wykonanie kodu szablonu Jinja2.
+
+3.  **Python code injection**
+    *    Pozwala na wykonanie dowolnego kodu Pythona.
+
+4.  **SQL Injection**
+    *    Pozwala na pominięcie autoryzacji poprzez wstrzyknięcie złośliwego kodu SQL.
+
+---
+# Uruchomienie z wykorzystaniem Dockera
+1. **Zbuduj obraz:** Otwórz terminal w katalogu, gdzie masz `Dockerfile` i uruchom:
+   
+        
+        docker build -t vulnerable-flask-app .
+        
+3.  **Uruchom kontener:**
+
+        
+        docker run -p 5000:5000 vulnerable-flask-app
+        
+---
+
+# Uruchomienie z wykorzystaniem WSL (Windows Subsystem for Linux)
 
 ## Kroki instalacji i uruchomienia
 
