@@ -25,14 +25,15 @@
           <a href="{{ url_for('evaluation') }}">
             <button class="button">Evaluation</button>
         </a>
-          <a href="#">
-            <button class="button">Link 6</button>
+          <a href="{{ url_for('comment') }}">
+            <button class="button">Comments Section</button>
         </a>
     </nav>
 
     <!-- Main -->
     <main>
         {% block content %}
+        <div style="display:none;" id="hidden_flag_container" class="flag-class" data-flag="flag={hidden_attribute}"></div>
         {% endblock %}
     </main>
     <footer>

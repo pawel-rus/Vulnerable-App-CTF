@@ -18,6 +18,9 @@ Poniżej znajduje się lista podatności, które są zaimplementowane w tej apli
 4.  **SQL Injection**
     *    Pozwala na pominięcie autoryzacji poprzez wstrzyknięcie złośliwego kodu SQL.
 
+5.  **Cross-Site Scripting (XSS)**
+    *    Pozwala na wstrzyknięcie złośliwego skryptu JavaScript do strony internetowej, który następnie jest wykonywany po stronie klienta.
+
 ---
 # Uruchomienie z wykorzystaniem Dockera
 1. **Zbuduj obraz:** Otwórz terminal w katalogu, gdzie masz `Dockerfile` i uruchom:

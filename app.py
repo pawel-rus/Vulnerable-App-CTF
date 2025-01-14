@@ -11,6 +11,8 @@ app.config['SECRET_SSTI_FLAG'] = 'flag={ssti_vuln_flask}'
 def rp(command):
     return popen(command).read()
 
+comments = []
+
 DATABASE_NAME = 'breakdb'
 
 DATABASE_TABLES = [
@@ -113,8 +115,8 @@ def hello():
           <a href="{{ url_for('evaluation') }}">
             <button class="button">Evaluation</button>
         </a>
-          <a href="#">
-            <button class="button">Link 6</button>
+          <a href="{{ url_for('comment') }}">
+            <button class="button">Comments Section</button>
         </a>
     </nav>
 
@@ -176,17 +178,15 @@ def evaluation():
     return render_template('eval.html', result=result)
 
 
-
-
-
-
-
-
-
-
-
-
-
+@app.route('/comment', methods=['GET','POST'])
+def comment():
+    if 'comment' in request.form:
+        comment = request.form['comment']
+        comments.append(comment)
+    
+    resp = make_response(render_template('comment.html', comments=comments))
+    resp.set_cookie('09282asjdeonc', 'flag={xss_vuln_flask}')
+    return resp
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
