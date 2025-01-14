@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Python Evaluation</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Python Expression Evaluation</h1>
+     <div class="form-container">
+        <form action="/evaluation" method="POST">
+            <p><h3>Enter Python expression</h3></p>
+            <p><input type="text" name="expression" class="input-field"></p>
+            <p><input type="submit" value="Evaluate" class="submit-button"></p>
+        </form>
+    </div>
+    {% if result %}
+        <div class="result-container">
+           <p><strong>Result:</strong><br>
+               {{ result | safe }}
+            </p>
+          </div>
+    {% endif %}
+{% endblock %}

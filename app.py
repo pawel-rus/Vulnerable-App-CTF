@@ -110,8 +110,8 @@ def hello():
           <a href="{{ url_for('login') }}">
             <button class="button">Login</button>
         </a>
-          <a href="#">
-            <button class="button">Link 5</button>
+          <a href="{{ url_for('evaluation') }}">
+            <button class="button">Evaluation</button>
         </a>
           <a href="#">
             <button class="button">Link 6</button>
@@ -162,7 +162,18 @@ def login():
     return render_template('login.html', error=error)
 
 
-
+@app.route('/evaluation', methods = ['POST', 'GET'])
+def evaluation():
+    expression = None
+    result = None
+    if request.method == 'POST':
+        expression = request.form['expression']
+        if expression:
+            try:
+                result = str(eval(expression)).replace('\n', '\n<br>')
+            except Exception as e:
+                result = str(e)
+    return render_template('eval.html', result=result)
 
 
 
