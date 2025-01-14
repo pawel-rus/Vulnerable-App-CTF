@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    <title>Vulnerable Flask App</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">
+            <button class="button">Home</button>
+        </a>
+        <a href="{{ url_for('ping') }}">
+            <button class="button">Ping</button>
+        </a>
+        <a href="{{ url_for('hello') }}">
+            <button class="button">Hello</button>
+        </a>
+          <a href="#">
+            <button class="button">Link 4</button>
+        </a>
+          <a href="#">
+            <button class="button">Link 5</button>
+        </a>
+          <a href="#">
+            <button class="button">Link 6</button>
+        </a>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2024 Vulnerable Flask App</p>
+    </footer>
+</body>
+</html>

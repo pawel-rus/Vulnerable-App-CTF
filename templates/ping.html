@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>PING</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Do ping on address</h1>
+    <div class="form-container">
+        <form action="/ping" method="POST">
+            <p><h3>Enter address to ping</h3></p>
+            <p><input type="text" name="address" class="input-field"></p>
+            <p><input type="submit" value="Send Ping" class="submit-button"></p>
+        </form>
+    </div>
+
+    {% if result %}
+    <div class="result-container">
+        <p><strong>Result:</strong><br>
+            {{ result | safe }}
+        </p>
+    </div>
+    {% endif %}
+{% endblock %}
