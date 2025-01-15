@@ -116,7 +116,7 @@ def hello():
             <button class="button">Evaluation</button>
         </a>
           <a href="{{ url_for('comment') }}">
-            <button class="button">Comments Section</button>
+            <button class="button">Comments</button>
         </a>
     </nav>
 
