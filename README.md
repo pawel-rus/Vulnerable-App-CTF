@@ -1,8 +1,7 @@
 # Vulnerable Flask Application CTF
 
-Aplikacja jest podatna na kilka różnych rodzajów ataków. Twoim zadaniem jest zidentyfikowanie tych podatności i odesłanie znalezionych flag wraz z informacją, jakiej podatności użyłeś.
-
 ## Podatności w aplikacji
+Aplikacja podatna jest na kilka różnych rodzajów ataków.
 
 Poniżej znajduje się lista podatności, które są zaimplementowane w tej aplikacji:
 
@@ -20,15 +19,28 @@ Poniżej znajduje się lista podatności, które są zaimplementowane w tej apli
 
 5.  **Cross-Site Scripting (XSS)**
     *    Pozwala na wstrzyknięcie złośliwego skryptu JavaScript do strony internetowej, który następnie jest wykonywany po stronie klienta.
+6.  **Ukryte wskazówki w zawartości**   
+    *   Aplikacja zawiera dodatkowe wskazówki w mniej oczywistych miejscach, takich jak zawartość niektórych elementów lub inne ukryte metadane.
+
+## Zadanie dla uczestnika
+
+- Twoim zadaniem jest znalezienie jak największej ilości flag ukrytych w aplikacji bądź na serwerze.
+
+- Flagi zapisane są w formacie **flag={flag_name}**
+
+- Identyfikacja, w jaki sposób udało Ci się znaleźć każdą flagę (np. opis podatności, której użyłeś).
+
+- Przesłanie krótkiej notatki, zawierającej flagi oraz kroki, które podjąłeś, aby wykorzystać podatność.
+
 
 ---
 # Uruchomienie z wykorzystaniem Dockera
-1. **Zbuduj obraz:** Otwórz terminal w katalogu, gdzie masz `Dockerfile` i uruchom:
+1. **Zbuduj obraz:** Otwórz terminal w katalogu, gdzie znajduje się `Dockerfile` i uruchom:
    
         
         docker build -t vulnerable-flask-app .
         
-3.  **Uruchom kontener:**
+2.  **Uruchom kontener:**
 
         
         docker run -p 5000:5000 vulnerable-flask-app
