@@ -19,6 +19,7 @@ Poniżej znajduje się lista podatności, które są zaimplementowane w tej apli
 
 5.  **Cross-Site Scripting (XSS)**
     *    Pozwala na wstrzyknięcie złośliwego skryptu JavaScript do strony internetowej, który następnie jest wykonywany po stronie klienta.
+    
 6.  **Ukryte wskazówki w zawartości**   
     *   Aplikacja zawiera dodatkowe wskazówki w mniej oczywistych miejscach, takich jak zawartość niektórych elementów lub inne ukryte metadane.
 
